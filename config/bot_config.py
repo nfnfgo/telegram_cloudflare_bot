@@ -4,6 +4,6 @@
 
 # - Bot Settings
 # --- Bot Tokens
-bot_token = 'Enter your token here'
+token = 'Enter your token here'
 # --- Bot Admin
 admin = 'Enter the admin telegram id'
