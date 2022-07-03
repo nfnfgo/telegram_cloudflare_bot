@@ -7,3 +7,9 @@
 token = 'Enter your token here'
 # --- Bot Admin
 admin = 'Enter the admin telegram id'
+
+
+
+# - Text Format Settings
+# --- separator, used to separate the text when bot send message to you
+sepa='————————————————'
