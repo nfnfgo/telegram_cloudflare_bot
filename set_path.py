@@ -3,14 +3,25 @@
 import time
 import os # Used to get the working path
 
+
+
 # Get working path (so this means 'set_path.py' must be run at the correct working path, and it will effect all the programs path localing)
 r_path=os.getcwd()
 
+# A Function that can set a file contain working file info in input path
+def SetLoFile(path):
+    with open(path+'/r_path.txt','w') as f:
+        f.write(r_path)
+
+
+
+
+# Get a iternate path list, ready for set the path_locating file.
 path_list=os.walk(r_path)
 
-for a,b,c in path_list:
+# provide every single son dir a 'r_path.txt' file
+for path,dirs,files in path_list:
     if '.git' in a:
         continue
     print(a,b,c)
-
-print(path_list)
+    SetLoFile(path)
