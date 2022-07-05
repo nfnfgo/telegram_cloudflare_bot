@@ -21,7 +21,7 @@ path_list=os.walk(r_path)
 
 # provide every single son dir a 'r_path.txt' file
 for path,dirs,files in path_list:
-    if '.git' in a:
+    if '.git' in path:
         continue
-    print(a,b,c)
+    #print(a,b,c)
     SetLoFile(path)
