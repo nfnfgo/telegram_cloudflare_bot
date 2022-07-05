@@ -1,5 +1,5 @@
 import time
 
-from set_path import SetRPath()
+from set_path import SetRPath
 
 SetRPath()
