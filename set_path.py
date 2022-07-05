@@ -23,5 +23,4 @@ path_list=os.walk(r_path)
 for path,dirs,files in path_list:
     if '.git' in path:
         continue
-    #print(a,b,c)
     SetLoFile(path)
