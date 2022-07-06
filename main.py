@@ -2,5 +2,5 @@ import time
 
 from set_path import SetRPath
 
-SetRPath()
+SetRPath(os.getcwd())
 

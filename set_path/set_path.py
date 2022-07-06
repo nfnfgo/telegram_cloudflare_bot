@@ -9,7 +9,7 @@ import os # Used to get the working path
 r_path=os.getcwd()
 
 # A Function that can set a file contain working file info in input path
-def SetLoFile(path):
+def SetLoFile(r_path,path):
     # read the example file
     with open('./r_path_example.py','r') as f:
         text=f.read()
@@ -37,13 +37,12 @@ path_list=os.walk(r_path)
 for path,dirs,files in path_list:
     if '.git' in path:
         continue
-    SetLoFile(path)
+    SetLoFile(r_path,path)
 
 
 # the SetRPath function is same to run this set_path.py directly
-def SetRPath():
+def SetRPath(r_path):
     # Get working path (so this means 'set_path.py' must be run at the correct working path, and it will effect all the programs path localing)
-    r_path=os.getcwd()
 
     # Get a iternate path list, ready for set the path_locating file.
     path_list=os.walk(r_path)
@@ -52,6 +51,6 @@ def SetRPath():
     for path,dirs,files in path_list:
         if '.git' in path:
             continue
-        SetLoFile(path)
+        SetLoFile(r_path,path)
 
 # ---------------------------------------------------------------------------
