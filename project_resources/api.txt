@@ -1,0 +1,1 @@
+https://api.cloudflare.com/#page-rules-for-a-zone-list-page-rules
