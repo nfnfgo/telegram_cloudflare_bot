@@ -5,6 +5,7 @@ import os # Used to get the working path
 
 # -------------------------------------------------------------------------------
 
+
 # Get working path (so this means 'set_path.py' must be run at the correct working path, and it will effect all the programs path localing)
 r_path=os.getcwd()
 
@@ -35,13 +36,17 @@ def SetLoFile(r_path,path):
 # -----------------------------------------------------------------------------
 
 # Get a iternate path list, ready for set the path_locating file.
-path_list=os.walk(r_path)
+if __name__ == '__main__':
+    print('set_path has been run directly')
+    print('This is not safe because directly-run version has been abandoned.')
+    print('try to use function-call method by import set_path.set_path.SetRPath')
+    path_list=os.walk(r_path)
 
-# provide every single son dir a 'r_path.txt' file
-for path,dirs,files in path_list:
-    if '.git' in path:
-        continue
-    SetLoFile(r_path,path)
+    # provide every single son dir a 'r_path.txt' file
+    for path,dirs,files in path_list:
+        if '.git' in path:
+            continue
+        SetLoFile(r_path,path)
 
 
 # The directly run method above has been adandoned, don't use it!! use function calling below instead!!

@@ -8,3 +8,4 @@ from config import bot_config
 SetRPath(os.getcwd())
 
 # some bot settings
+bot=telebot.TeleBot(bot_config.token,parse_mode='HTML')
