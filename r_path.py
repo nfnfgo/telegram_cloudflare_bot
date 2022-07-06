@@ -1,3 +1,3 @@
 r_path='/workspaces/telegram_cloudflare_bot'
-timestamp='HERE_IS_TIMESTAMP'
-readable_time='HERE_IS_READABLE_TIME'
+timestamp='1657079355.5714061'
+readable_time='2022-07-06 03:49:15'
