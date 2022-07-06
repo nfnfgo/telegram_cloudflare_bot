@@ -11,8 +11,12 @@ r_path=os.getcwd()
 # A Function that can set a file contain working file info in input path
 def SetLoFile(r_path,path):
     # read the example file
-    with open('./r_path_example.py','r') as f:
-        text=f.read()
+    try:
+        with open('./r_path_example.py','r') as f:
+            text=f.read()
+    except:
+        with open('./set_path/r_path_example.py','r') as f:
+            text=f.read()
     
     # get the timestamp and readable time
     timestamp=time.time()
@@ -40,7 +44,7 @@ for path,dirs,files in path_list:
     SetLoFile(r_path,path)
 
 
-# the SetRPath function is same to run this set_path.py directly
+# The directly run method above has been adandoned, don't use it!! use function calling below instead!!
 def SetRPath(r_path):
     # Get working path (so this means 'set_path.py' must be run at the correct working path, and it will effect all the programs path localing)
 
@@ -50,6 +54,8 @@ def SetRPath(r_path):
     # provide every single son dir a 'r_path.txt' file
     for path,dirs,files in path_list:
         if '.git' in path:
+            continue
+        if 'pycache' in path:
             continue
         SetLoFile(r_path,path)
 
