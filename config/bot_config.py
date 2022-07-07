@@ -4,9 +4,9 @@
 
 # - Bot Settings
 # --- Bot Tokens
-token = 'Enter your token here'
+token = '5454330388:AAEF2h3msgW-8ySRqAm8nfYRpXOxc7S4v0Y'
 # --- Bot Admin
-admin = 'Enter the admin telegram id'
+admin = 975140440
 
 
 
