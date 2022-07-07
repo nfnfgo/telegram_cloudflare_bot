@@ -12,4 +12,6 @@ admin = 'Enter the admin telegram id'
 
 # - Text Format Settings
 # --- separator, used to separate the text when bot send message to you
-sepa='————————————————'
+sepa = '————————————————'
+# --- r_path file format settings
+timestamp_format='float' # 'float' or 'int'

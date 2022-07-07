@@ -1,0 +1,2 @@
+def pb():
+    print('b')
