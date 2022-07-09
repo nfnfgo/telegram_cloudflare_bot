@@ -1,8 +1,9 @@
 import time
 import os
 import subprocess
+import asyncio
 
-import telebot
+from telebot.async_telebot import AsyncTeleBot
 
 import r_path
 from set_path.set_path import SetRPath
@@ -13,7 +14,7 @@ import bot_func
 SetRPath(os.getcwd())
 
 # some bot settings
-bot=telebot.TeleBot(bot_config.token,parse_mode='HTML')
+bot=AsyncTeleBot(bot_config.token,parse_mode='HTML')
 # get hostname
 p=subprocess.run('hostname',shell=True,stdout=subprocess.PIPE)
 hostname=p.stdout
@@ -27,12 +28,20 @@ bot.send_message(bot_config.admin,link_msg)
 
 # Now is the function implement
 @bot.message_handler(commands=['start', 'help'])
-def send_bot_intro(message):
+async def send_bot_intro(message):
     '''Catch Welcome And Help Message and send some Introduction'''
     re_text=bot_func.GetBotIntro()
-    bot.reply_to(message,re_text)
+    await bot.reply_to(message,re_text)
 
-
+@bot.message_handler(func=lambda message: True)
+async def echo_msg(message):
+    await asyncio.sleep(5)
+    await bot.reply_to(message,message.text)
 
 # make the bot to get message constantly
-bot.infinity_polling()
+asyncio.run(bot.polling())
+
+
+ok_text='ok'
+async def print_sth_ok(text:str)->None:
+    print(text,ok_text)
