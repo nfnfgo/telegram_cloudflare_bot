@@ -1,5 +1,5 @@
 # ignore cache file
-/__pycache__
+__pycache__/*
 
 # ignore config file
 *config.py
