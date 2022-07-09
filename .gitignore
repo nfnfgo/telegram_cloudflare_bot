@@ -1,5 +1,5 @@
 # 忽略运行时文件
-__pycharche__
+*/__pycharche__
 
 # ignore config file
 *config.py
