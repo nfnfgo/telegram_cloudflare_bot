@@ -22,7 +22,6 @@ hostname=hostname.decode('utf-8')
 hostname=hostname.replace('\n','')
 link_msg='<strong>Bot Server Started</strong>\n\n'
 link_msg+=f'Server <strong>{hostname}</strong> started at <strong>{r_path.r_path}</strong>'
-bot.send_message(bot_config.admin,link_msg)
 
 
 
@@ -33,8 +32,13 @@ async def send_bot_intro(message):
     re_text=bot_func.GetBotIntro()
     await bot.reply_to(message,re_text)
 
+ok_text='ok'
+async def print_sth_ok(text:str)->None:
+    print(text,ok_text)
+
 @bot.message_handler(func=lambda message: True)
 async def echo_msg(message):
+    await bot_func.Dosth(message.text,print_sth_ok())
     await asyncio.sleep(5)
     await bot.reply_to(message,message.text)
 
@@ -42,6 +46,3 @@ async def echo_msg(message):
 asyncio.run(bot.polling())
 
 
-ok_text='ok'
-async def print_sth_ok(text:str)->None:
-    print(text,ok_text)
